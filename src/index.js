@@ -24,6 +24,7 @@ const server = new ApolloServer({
   },
   typeDefs,
 
+
   resolvers,
   dataSources: () => ({
     launchAPI: new LaunchAPI(),
@@ -31,7 +32,7 @@ const server = new ApolloServer({
   })
 });
 
-server.listen().then(() => {
+server.listen(process.env.PORT || 4000).then(() => {
   console.log(`
     Server is running!
     Listening on port 4000
